@@ -6,5 +6,5 @@ const found = [];
 for (const k of keys){ const g = grab(k); if (g) found.push(g); }
 const rec = { at: new Date().toISOString(), status: $response && $response.status, url: $request.url, len: String(body0).length, found: found, snippet: clean.replace(/\s+/g,' ').slice(0,1500) };
 try { $persistentStore.write(JSON.stringify(rec), 'itc.last'); } catch(e) {}
-try { $notification.post('itunes ' + (($response && $response.status) || '?'), (found[0] || clean.replace(/\s+/g,' ').slice(0,120)), 'voir: buy.itunes.apple.com/cap'); } catch(e) {}
+try { $notification.post('itunes ' + (($response && $response.status) || '?'), (found[0] || clean.replace(/\s+/g,' ').slice(0,120)), 'sandbox.itunes.apple.com/cap2'); } catch(e) {}
 $done({});
